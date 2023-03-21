@@ -21,10 +21,7 @@ router.route("/add").post((req,res)=>{
         email,
         fax,
         hospitaltype,
-        description,
-
-       
-
+        description
     })
 
     newHospital.save().then(()=>{
@@ -68,7 +65,7 @@ router.route("/update/:id").put(async (req,res) => {
         email,
         fax,
         hospitaltype,
-        description,
+        description
     }
 
     const update = await Hospital.findByIdAndUpdate(userId, upadatepdetails).then(() =>{
