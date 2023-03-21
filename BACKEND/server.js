@@ -45,8 +45,8 @@ const { route } = require("./routes/Hospitals.js");
  app.use("/Hospital",HospitalRouter);
  //app.use("/users",userRouter);
 
- const donationRouter = require("./routes/donations");
- const projectRouter = require("./routes/projects");
+ const donationRouter = require("./routes/donations.js");
+ const projectRouter = require("./routes/projects.js");
  
  app.use("/donation",donationRouter);
  app.use("/project",projectRouter);
