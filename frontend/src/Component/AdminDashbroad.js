@@ -1,124 +1,80 @@
-import React from "react";
-import "./Box.css";
-import {Card} from "react-bootstrap";
+import React from 'react';
+import './style.css';
 
-
-
-import { useLocation } from "react-router-dom";
-import { Navbar, Container, Nav, Dropdown, Button } from "react-bootstrap";
-
-
-
-
-function AdminDashbroad () {
-
-
-    
-        return(
-            <div>
-            <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div className="container-fluid">
-              <a className="navbar-brand" href="#" style={{color:"red"}}>LSR </a>
-              <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span className="navbar-toggler-icon"></span>
-              </button>
-              <div className="collapse navbar-collapse" id="navbarNav">
-              <ul className="navbar-nav">
-                    <li className="nav-item">
-                    <a className="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    
-                </ul>
-                
-              </div>
-            </div>
-          </nav>
-          <br></br>
-    
-              <div class="row row-cols-2 row-cols-md-4 g-6">
-              <div class="col">
-                <div class="card h-100">
-                  <img src="./images/admin/customer.jpg" height="250px" class="card-img-top" alt="..."/>
-                  <div class="card-body">
-                    <h5 class="card-title">Customer Management</h5>
-                    <p class="card-text"></p>
-                  </div>
-                  <a type="button" class="btn btn-success">Go</a>
-                </div>
-              </div>
-    
-              <div class="col">
-                <div class="card h-100">
-                 <img src="./images/admin/Accommodation.jpg" height="250px" class="card-img-top" alt="..."/>
-                  <div class="card-body">
-                    <h5 class="card-title">Accommodation Management</h5>
-                    <p class="card-text"></p>
-                  </div>
-                  <button type="button" class="btn btn-success">Go</button>
-                </div>
-              </div>
-    
-              <div class="col">
-                <div class="card h-100">
-                 <img src="./images/admin/Transport.jpg" height="250px" class="card-img-top" alt="..."/>
-                  <div class="card-body">
-                    <h5 class="card-title">Transport Management</h5>
-                    <p class="card-text"></p>
-                  </div>
-                  <button type="button" class="btn btn-success">Go</button>
-                </div>
-              </div>
-    
-              <div class="col">
-                <div class="card h-100">
-                  <img src="./images/admin/Package.jpg" height="250px" class="card-img-top" alt="..."/>
-                  <div class="card-body">
-                    <h5 class="card-title">Package Management</h5>
-                    <p class="card-text"></p>
-                  </div> 
-                  <button type="button" class="btn btn-success">Go</button>
-                </div>
-              </div>
-              
-              <div class="col">
-                <div class="card h-100">
-                  <img src="./images/admin/payment.jpg" height="250px" class="card-img-top" alt="..."/>
-                  <div class="card-body">
-                    <h5 class="card-title">Expenses Management</h5>
-                    <p class="card-text"></p>
-                  </div>
-                  <a type="button" class="btn btn-success" href = "/all">Go</a>
-                </div>
-              </div>
-    
-              <div class="col">
-                <div class="card h-100">
-                  <img src="./images/admin/Itinerary.jpg" height="250px" class="card-img-top" alt="..."/>
-                  <div class="card-body">
-                    <h5 class="card-title">Itinerary Management</h5>
-                    <p class="card-text"></p>
-                  </div>
-                  <button type="button" class="btn btn-success">Go</button>
-                </div>
-              </div>
-    
-              <div class="col">
-                <div class="card h-100">
-                  <img src="./images/admin/Reservation.jpg" height="250px" class="card-img-top" alt="..."/>
-                  <div class="card-body">
-                    <h5 class="card-title">Reservation Management</h5>
-                    <p class="card-text"></p>
-                  </div>
-                  <button type="button" class="btn btn-success">Go</button>
-                </div>
-              </div>
-    
-            </div>
-            </div>
-            
-
-        
-        );
-    };
+function AdminDashbroad() {
+  return (
+    <div>
+      <div className="sidebar">
+        <div className="logo-details">
+          <div className="logo_name">LifeCare</div>
+          <i className='bx bx-menu' id="btn"></i>
+        </div>
+        <ul className="nav-list">
+          <li>
+            <a href="#">
+              <i className='bx bx-grid-alt'></i>
+              <span className="links_name">Request Stationary</span>
+            </a>
+            <span className="tooltip">Request Stationary</span>
+          </li>
+          <li>
+            <a href="#">
+              <i className='bx bx-user'></i>
+              <span className="links_name">My Updates</span>
+            </a>
+            <span className="tooltip">My Updates</span>
+          </li>
+        </ul>
+      </div>
+      <section className="home-section">
+        <div className="text">
+        <img src="./images/lgo.jpg" alt="" width="120" height="100" />
+          <center><input type="text" name="search" placeholder="Search.." /></center>
+        </div>
+        <br /><br /><br /><br /><br /><br />
+        <div>
+          <center>
+            <table>
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>NAME</th>
+                  <th>STOCK</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1.</td>
+                  <td>Machines</td>
+                  <td>350</td>
+                </tr>
+                <tr>
+                  <td>2.</td>
+                  <td>Poseps</td>
+                  <td>500</td>
+                </tr>
+                <tr>
+                  <td>3.</td>
+                  <td>Siccor</td>
+                  <td>8000</td>
+                </tr>
+                <tr>
+                  <td>4.</td>
+                  <td>Cylinder</td>
+                  <td>100</td>
+                </tr>
+                <tr>
+                  <td>5.</td>
+                  <td>Syringes</td>
+                  <td>7000</td>
+                </tr>
+              </tbody>
+            </table>
+          </center>
+        </div>
+      </section>
+    </div>
+  );
+}
 
 export default AdminDashbroad;
