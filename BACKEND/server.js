@@ -39,8 +39,8 @@ const HospitalRouter = require("./routes/Hospitals.js");
 const { route } = require("./routes/Hospitals.js");
 //const userRouter = require("./routes/auth.js");
 
-const donationRouter = require("./routes/donations");
-const projectRouter = require("./routes/projects");
+const donationRouter = require("./routes/donations.js");
+const projectRouter = require("./routes/projects.js");
 
 
  app.use("/Hospital",HospitalRouter);
