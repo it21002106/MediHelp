@@ -6,23 +6,44 @@ function AdminDashbroad() {
     <div>
       <div className="sidebar">
         <div className="logo-details">
-          <div className="logo_name">LifeCare</div>
+          <div className="logo_name">MediHelp</div>
           <i className='bx bx-menu' id="btn"></i>
         </div>
         <ul className="nav-list">
           <li>
             <a href="#">
               <i className='bx bx-grid-alt'></i>
-              <span className="links_name">Request Stationary</span>
+              <span className="links_name">Dashboard</span>
             </a>
-            <span className="tooltip">Request Stationary</span>
+            <span className="tooltip">Dashboard</span>
           </li>
           <li>
             <a href="#">
               <i className='bx bx-user'></i>
-              <span className="links_name">My Updates</span>
+              <span className="links_name">Prescription</span>
             </a>
-            <span className="tooltip">My Updates</span>
+            <span className="tooltip">Prescription</span>
+          </li>
+          <li>
+            <a href="#">
+              <i className='bx bx-grid-alt'></i>
+              <span className="links_name">Health Project</span>
+            </a>
+            <span className="tooltip">Health Project</span>
+          </li>
+          <li>
+            <a href="/all">
+              <i className='bx bx-grid-alt'></i>
+              <span className="links_name">Hospitals</span>
+            </a>
+            <span className="tooltip">Hospitals</span>
+          </li>
+          <li>
+            <a href="#">
+              <i className='bx bx-grid-alt'></i>
+              <span className="links_name">Events</span>
+            </a>
+            <span className="tooltip">Events</span>
           </li>
         </ul>
       </div>
