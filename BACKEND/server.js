@@ -1,6 +1,3 @@
- 
- 
- 
  const express = require("express"); 
  const mongoose = require("mongoose");
  const bodyParser = require("body-parser");
@@ -38,14 +35,20 @@
     console.log("Mongodb Conection Success!");
  })
 
- const HospitalRouter = require("./routes/Hospitals.js");
+const HospitalRouter = require("./routes/Hospitals.js");
 const { route } = require("./routes/Hospitals.js");
 //const userRouter = require("./routes/auth.js");
+
+const donationRouter = require("./routes/donations");
+const projectRouter = require("./routes/projects");
+
 
  app.use("/Hospital",HospitalRouter);
  //app.use("/users",userRouter);
 
-
+ app.use("/donation",donationRouter);
+ app.use("/project",projectRouter);
+ 
 
  app.listen(PORT, () => {
      console.log(`Server is up and runing on port number : ${PORT}`)
