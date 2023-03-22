@@ -11,7 +11,7 @@ router.route("/add").post((req,res)=>{
     const mobilenumber = Number(req.body.mobilenumber);
     const email = req.body.email;
     const fax = Number(req.body.fax);
-    const hospitaltype = req.body.hospitaltyp;
+    const hospitaltype = req.body.hospitaltype;
     const description = req.body.description;
 
     const newHospital = new Hospital({
@@ -70,7 +70,7 @@ router.route("/update/:id").put(async (req,res) => {
 
     const update = await Hospital.findByIdAndUpdate(userId, upadatepdetails).then(() =>{
 
-        res.status(200).send({status: "user updated"})
+        res.status(200).send({status: "Hospital details updated"})
 
     }).catch((err)=>{
 
@@ -90,7 +90,7 @@ router.route("/update/:id").put(async (req,res) => {
 
     await Hospital.findByIdAndDelete(userId).then(() => {
 
-        res.status(200).send({status: "user deleted"});
+        res.status(200).send({status: "Hospital details deleted"});
 
     }).catch((err)=>{
 
