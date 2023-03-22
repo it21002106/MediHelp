@@ -51,8 +51,8 @@ const { route } = require("./routes/Hospitals.js");
  app.use("/donation",donationRouter);
  app.use("/project",projectRouter);
 
- 
- 
+ const EventRouter = require("./routes/Events.js");
+ app.use("/Event",EventRouter);
 
 
  app.listen(PORT, () => {
