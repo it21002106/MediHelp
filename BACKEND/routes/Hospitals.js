@@ -82,7 +82,7 @@ router.route("/update/:id").put(async (req,res) => {
    })
 
 
-   http://localhost:8070/delete/5ffffffhf
+   http://localhost:8070/Hospital/delete/5ffffffhf
 
    router.route("/delete/:id").delete(async (req,res) => {
 

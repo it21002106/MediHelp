@@ -53,46 +53,8 @@ function AdminDashbroad() {
           <center><input type="text" name="search" placeholder="Search.." /></center>
         </div>
         <br /><br /><br /><br /><br /><br />
-        <div>
-          <center>
-            <table>
-              <thead>
-                <tr>
-                  <th>ID</th>
-                  <th>NAME</th>
-                  <th>STOCK</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1.</td>
-                  <td>Machines</td>
-                  <td>350</td>
-                </tr>
-                <tr>
-                  <td>2.</td>
-                  <td>Poseps</td>
-                  <td>500</td>
-                </tr>
-                <tr>
-                  <td>3.</td>
-                  <td>Siccor</td>
-                  <td>8000</td>
-                </tr>
-                <tr>
-                  <td>4.</td>
-                  <td>Cylinder</td>
-                  <td>100</td>
-                </tr>
-                <tr>
-                  <td>5.</td>
-                  <td>Syringes</td>
-                  <td>7000</td>
-                </tr>
-              </tbody>
-            </table>
-          </center>
-        </div>
+       
+        
       </section>
     </div>
   );
