@@ -37,7 +37,7 @@ router.route("/add").post((req,res)=>{
 
     newEvent.save().then(()=>{
 
-        res.json("Event Success Addes")
+        res.json("Event Details Added Successful")
     }).catch((err)=>{
 
         console.log(err);
@@ -64,6 +64,7 @@ router.route("/").get((req,res)=>{
 
 http://localhost:8070/Event/update/5ffffffhf
 
+//Update
 router.route("/update/:id").put(async (req,res) => {
 
     let userId = req.params.id;
@@ -85,7 +86,7 @@ router.route("/update/:id").put(async (req,res) => {
 
     const update = await Event.findByIdAndUpdate(userId, upadatepdetails).then(() =>{
 
-        res.status(200).send({status: "Event details updated"})
+        res.status(200).send({status: "Event Details Updated Successful"})
 
     }).catch((err)=>{
 
@@ -97,15 +98,16 @@ router.route("/update/:id").put(async (req,res) => {
    })
 
 
-   http://localhost:8070/delete/5ffffffhf
+   http://localhost:8070/Event/delete/5ffffffhf
 
+   //Delete
    router.route("/delete/:id").delete(async (req,res) => {
 
     let userId = req.params.id;
 
     await Event.findByIdAndDelete(userId).then(() => {
 
-        res.status(200).send({status: "Event details deleted"});
+        res.status(200).send({status: "Event Details Deleted Successful"});
 
     }).catch((err)=>{
 
