@@ -71,17 +71,17 @@ useEffect(() => {
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
+     
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
               <a className="nav-link active" aria-current="page" href="/">Home</a>
             </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/add">Customer Info</a>
-            </li>
+          
            
           </ul>
         </div>
+      
       </div>
     </nav>
 
@@ -101,7 +101,13 @@ useEffect(() => {
 
             <br></br>
 
-      <button className="btn btn-success"><a href="/SupReport" style={{textDecoration:'none',color:'white'}}>Genarate Report</a></button><br></br>
+            <button className="btn btn-success"><a href="/add" style={{textDecoration:'none',color:'white'}}>Add New Hospital</a></button>
+
+            
+
+      <button className="btn btn-success"><a href="/SupReport" style={{textDecoration:'none',color:'white'}}>Genarate Report</a></button> <br></br>
+
+     
       
 
            <br></br><table className="table table-success table-striped">
