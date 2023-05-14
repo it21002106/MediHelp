@@ -47,10 +47,11 @@ app.use("/event",eventRouter);
 
 const prescriptionRouter = require("./routes/prescription.js");
 app.use("/prescription",prescriptionRouter);
+*/
 
 const userRoutes = require("./routes/UserRoutes.js");
 app.use('/user', userRoutes);
-*/
+
 
 app.listen(PORT, () => {
     console.log(`Server is up and runing on port number : ${PORT}`)
