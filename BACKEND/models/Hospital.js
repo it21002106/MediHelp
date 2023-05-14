@@ -4,17 +4,17 @@ const Schema = mongoose.Schema;
 
 const hospitalschema = new Schema({
 
-    
-    hospitalname :{
+
+    hospitalName :{
 
         type : String,
         required : true 
     },
 
-    mobilenumber :{
+    mobileNumber :{
 
         type : Number,
-        required : true 
+        required : true
     },
 
     email :{
@@ -28,8 +28,8 @@ const hospitalschema = new Schema({
         type : Number,
         required : true 
     },
- 
-    hospitaltype :{
+
+    type :{
 
         type : String,
         required : true
@@ -41,7 +41,10 @@ const hospitalschema = new Schema({
         required : true
     }, 
 
-    imageurls : []
+    image : {
+        type : String,
+        required : true
+    }
 
 })
 

@@ -4,7 +4,8 @@ import './style.css';
 function AdminDashbroad() {
   return (
     <div>
-      <div className="sidebar">
+
+<div className="sidebar">
         <div className="logo-details">
           <div className="logo_name">MediHelp</div>
           <i className='bx bx-menu' id="btn"></i>
@@ -56,6 +57,7 @@ function AdminDashbroad() {
        
         
       </section>
+
     </div>
   );
 }

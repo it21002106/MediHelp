@@ -1,32 +1,30 @@
 const router = require("express").Router();
-const { response } = require("express");
 let Hospital = require("../models/Hospital");
-
-http://Localhost:8070/Hospital/add
-
 router.route("/add").post((req,res)=>{
 
 
-    const hospitalname = req.body.hospitalname;
-    const mobilenumber = Number(req.body.mobilenumber);
+    const hospitalName = req.body.hospitalName;
+    const mobileNumber = req.body.mobileNumber;
     const email = req.body.email;
-    const fax = Number(req.body.fax);
-    const hospitaltype = req.body.hospitaltype;
+    const fax = req.body.fax;
+    const type = req.body.type;
     const description = req.body.description;
+    const image = req.body.image;
 
     const newHospital = new Hospital({
 
-        hospitalname,
-        mobilenumber,
+        hospitalName,
+        mobileNumber,
         email,
         fax,
-        hospitaltype,
-        description
+        type,
+        description,
+        image
     })
 
     newHospital.save().then(()=>{
 
-        res.json("Hospital Success Addes")
+        res.json("Hospital Success Added")
     }).catch((err)=>{
 
         console.log(err);
@@ -34,7 +32,6 @@ router.route("/add").post((req,res)=>{
 })    
 
 
-http://localhost:8070/Hospital
 
 router.route("/").get((req,res)=>{
 
@@ -51,21 +48,21 @@ router.route("/").get((req,res)=>{
 
 
 
-http://localhost:8070/Hospital/update/5ffffffhf
 
 router.route("/update/:id").put(async (req,res) => {
 
     let userId = req.params.id;
-    const {hospitalname, mobilenumber,email, fax, hospitaltype, description} = req.body;
+    const {hospitalName, mobileNumber,email, fax, type, description,image} = req.body;
 
     const upadatepdetails = {
 
-        hospitalname,
-        mobilenumber,
+        hospitalName,
+        mobileNumber,
         email,
         fax,
-        hospitaltype,
-        description
+        type,
+        description,
+        image
     }
 
     const update = await Hospital.findByIdAndUpdate(userId, upadatepdetails).then(() =>{
@@ -82,7 +79,6 @@ router.route("/update/:id").put(async (req,res) => {
    })
 
 
-   http://localhost:8070/Hospital/delete/5ffffffhf
 
    router.route("/delete/:id").delete(async (req,res) => {
 
@@ -125,7 +121,7 @@ router.route("/get/:id").get(async(req,res)=>{
     }).catch((err)=>{
         console.log(err.message);
         res.status(500).send({status:"Error with delete user", error:err.message});
-  })
+ })
 })
 
 
