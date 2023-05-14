@@ -46,7 +46,7 @@ app.use("/project",projectRouter);
 
 const prescriptionRouter = require("./routes/prescription.js");
 app.use("/prescription",prescriptionRouter);
-*/
+
 
 
 
