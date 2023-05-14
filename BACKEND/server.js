@@ -41,6 +41,7 @@ app.use("/donation",donationRouter);
 const projectRouter = require("./routes/projects.js");
 app.use("/project",projectRouter);
 
+/*
 const eventRouter = require("./routes/event.js");
 app.use("/event",eventRouter);
 
@@ -49,7 +50,7 @@ app.use("/prescription",prescriptionRouter);
 
 const userRoutes = require("./routes/UserRoutes.js");
 app.use('/user', userRoutes);
-
+*/
 
 app.listen(PORT, () => {
     console.log(`Server is up and runing on port number : ${PORT}`)
