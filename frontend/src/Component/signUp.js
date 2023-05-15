@@ -77,7 +77,7 @@ export default function Signup() {
 
 
                         <div className="container"><br></br>
-                            <h1 className='text-center' style={{color:"black"}}>Register To MediCare</h1>
+                            <h1 className='text-center' style={{color:"black"}}>Register To MediHelp - Admin</h1>
 
                             <form className="row g-2" onSubmit={register}>
 
