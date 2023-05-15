@@ -1,189 +1,281 @@
-import React, { useEffect, useState } from 'react'
+import React, {useEffect, useState} from 'react'
 import axios from 'axios';
-import { Card, Container, Row, Col} from "react-bootstrap";
+import {Card, Container, Row, Col} from "react-bootstrap";
 import {
-  MDBBtn,
-  MDBContainer,
-  MDBRow,
-  MDBCol,
-  MDBCard,
-  MDBCardBody,
-  MDBInput,
-  MDBSelect,
-  MDBRadio
+    MDBBtn,
+    MDBContainer,
+    MDBRow,
+    MDBCol,
+    MDBCard,
+    MDBCardBody,
+    MDBInput,
+    MDBSelect,
+    MDBRadio
 }
-from 'mdb-react-ui-kit';
-import { get } from 'lodash';
-import {useParams} from 'react-router-dom';
+    from 'mdb-react-ui-kit';
+import {get} from 'lodash';
+import {useNavigate, useParams} from 'react-router-dom';
+import AdminDashbroad from "./AdminDashbroad";
+import {updateHospital} from "../services/hospitalService";
+import Swal from "sweetalert2";
 
 function EditHospital(userId) {
 
     const [Hospital, setHospital] = useState([]);
-  const[hospitalname , sethospitalname] = useState("");
-   const[mobilenumber , setmobilenumber] = useState("");
-   const[email, setemail] = useState("");
-   const[fax, setfax] = useState("");
-   const[hospitaltype, sethospitaltype] = useState("");
-   const [description, setdescription] = useState("");
+    const [hospitalName, setHospitalName] = useState("");
+    const [mobileNumber, setMobileNumber] = useState("");
+    const [email, setEmail] = useState("");
+    const [fax, setFax] = useState("");
+    const [type, setType] = useState("");
+    const [description, setDescription] = useState("");
+    const [image, setImage] = useState("");
 
-   const params = useParams();
+
+    const params = useParams();
+    const navigate = useNavigate();
 
 
-  useEffect(()=>{
-    getHospitalDetails();
-  },[])
 
-  const getHospitalDetails = async()=>{
-    // console.warn(params)
-    let result = await fetch(`http://localhost:8070/Hospital/get/${params.id}`);
-    // setHospital(user.)
-    const {user} = await result.json();
-    console.log(user)
-    // setHospital(user.data);
-    sethospitalname(user.hospitalname)
-    setmobilenumber(user.mobilenumber)
-    setemail(user.email)
-    setfax(user.fax)
-    sethospitaltype(user.hospitaltype)
-    setdescription(user.description)
-   
-   /* setName(result.name);
-    setPassport(result.passport);
-    setAge(result.age);
-    setGender(result.gender);
-    setMobile(result.mobile);
-    setEmail(result.email); */
-  }
+    useEffect(() => {
+        getHospitalDetails();
+    }, [])
 
-  function updateHospital (e) {
-    e.preventDefault();
+    const getHospitalDetails = async () => {
+        let result = await fetch(`http://localhost:8070/Hospital/get/${params.id}`);
+        // setHospital(user.)
+        const {user} = await result.json();
+        // setHospital(user.data);
+        setHospitalName(user.hospitalName)
+        setMobileNumber(user.mobileNumber)
+        setEmail(user.email)
+        setFax(user.fax)
+        setType(user.type)
+        setDescription(user.description)
 
-    // console.log(params.id);
-
-    const updateHospital = {
-      hospitalname,
-      mobilenumber,
-      email,
-      fax,
-      hospitaltype,
-      description,
+        /* setName(result.name);
+         setPassport(result.passport);
+         setAge(result.age);
+         setGender(result.gender);
+         setMobile(result.mobile);
+         setEmail(result.email); */
     }
-        axios.put(`http://localhost:8070/Hospital/update/${params.id}`,updateHospital).then((res) => {
-            alert("Customer Details Updated");
+
+    function onChangeImage(e)  {
+        if (e.target.type === "file") {
+            const scope = this;
+            let reader = new FileReader();
+            reader.readAsDataURL(e.target.files[0]);
+            reader.onload = function () {
+                setImage(reader.result)
+            };
+        } else {
+            setImage(e.target.value)
+
+        }
+    };
+
+    function updateHospital(e) {
+        e.preventDefault();
+
+
+        const updateHospital = {
+            hospitalName,
+            mobileNumber,
+            email,
+            fax,
+            type,
+            description,
+            image
+        }
+
+        axios.put(`http://localhost:8070/Hospital/update/${params.id}`, updateHospital).then((res) => {
             setHospital(res.data);
-            // setmobilenumber(res.mobilenumber)
-            // setemail(res.email)
-            // setfax(fax)
-            // sethospitaltype(hospitaltype)
-            // setdescription(description)
-            
+            Swal.fire({
+                title: 'Sucess!',
+                text: ' successfull',
+                icon: 'success',
+                showConfirmButton: false,
+                timer: 1500
+            })
+            navigate('/all')
+
         }).catch((err) => {
             alert(err.message);
         })
-}
+    }
 
-      
-    return(
 
-        <div className="container">
-        <br></br>
-        <br></br>
-        <br></br>
+    return (
 
-  
-  <form onSubmit={updateHospital} >
-    <div class="mb-3">
-  
-      <label for="name" class="form-label" >Hospital Name</label>
-      <input type="text" class="form-control" id="name" placeholder="Enter Your hospitalname" value={hospitalname}
-      onChange={(e) =>{
-  
-  
-       sethospitalname(e.target.value);
-  
-      }}/>
-  
-    </div>
-  
-    <div className="mb-3"> 
 
-  
-      <label for="name" class="form-label">Mobile Number</label>
-      <input type="text" class="form-control" id="name" placeholder="Enter Your mobilenumber" value={mobilenumber}
-      onChange={(e) =>{
-  
-  
-        setmobilenumber(e.target.value);
-   
-       }}/>
-  
-    </div>
-  
-  <div className="mb-3">
-  
-      <label for="exampleInputEmail1" class="form-label">Email</label>
-      <input type="email" class="form-control" id="email" placeholder="Enter Email" value={email}
-      onChange={(e) =>{
-  
-  
-        setemail(e.target.value);
-   
-       }}/>
-    </div>
-  
-    <div className="mb-3">
-  
-      <label for="name" class="form-label">fax</label>
-      <input type="text" class="form-control" id="fax" placeholder="Enter Your fax" value={fax}
-      onChange={(e) =>{
-  
-  
-        setfax(e.target.value);
-   
-       }}/>
-  
-    </div>
-  
-    <div className="mb-3">
-  
-      <label for="name" class="form-label">hospitaltype</label>
-      <input type="text" class="form-control" id="hospitaltype" placeholder="Enter hospitaltype Number" value={hospitaltype}
-      onChange={(e) =>{
-  
-  
-        sethospitaltype(e.target.value);
-   
-       }}/>
-  
-    </div>
-  
-    <div className="mb-3">
-  
-      <label for="name" class="form-label">Description</label>
-      <input type="text" class="form-control" id="description" placeholder="Enter Total No Of Days in Sri Lanka" value={description}
-      onChange={(e) =>{
-  
-  
-        setdescription(e.target.value);
-   
-       }} />
-  
-    </div>
-    
-  
-   
-    <button type="submit" class="btn btn-primary">Upadte</button>
-  </form>
-  
-  
-  
-  
-          </div>
-  
-        
-      )
-     
-       
+        <div className='row'>
+
+            <div className="col-md-3">
+
+                <AdminDashbroad></AdminDashbroad>
+            </div>
+
+            <div className="col-md-9">
+                <div className="maincontainer">
+
+
+                    <div className="container">
+                        <h2>Update Hospital Details</h2>
+
+                        <form onSubmit={updateHospital}>
+
+                            <MDBContainer fluid>
+                                <MDBRow className='justify-content-center align-items-center m-5'>
+                                    <MDBCard>
+
+                                        <div className="col-auto">
+
+                                            <MDBCol md='6'>
+                                                <label htmlFor="name" className="form-label">Hospital Name</label>
+                                                <input type="text" className="form-control" id="name"
+                                                       placeholder="Enter Your hospitalname"
+                                                       value={hospitalName}
+                                                       onChange={(e) => {
+
+
+                                                           setHospitalName(e.target.value);
+
+                                                       }}/>
+                                            </MDBCol>
+                                        </div>
+
+                                        <div className="form-group">
+
+                                            <MDBCol md='6'>
+                                                <label htmlFor="name" className="form-label">Mobile Number</label>
+                                                <input type="text" className="form-control" id="name"
+                                                       placeholder="Enter Your mobilenumber"
+                                                       value={mobileNumber}
+                                                       onChange={(e) => {
+
+
+                                                           setMobileNumber(e.target.value);
+
+                                                       }}/>
+                                            </MDBCol>
+
+                                        </div>
+
+                                        <div className="form-group">
+                                            <MDBCol md='6'>
+
+                                                <label htmlFor="exampleInputEmail1" className="form-label">Email</label>
+                                                <input type="email" className="form-control" id="email"
+                                                       placeholder="Enter Email"
+                                                       value={email}
+                                                       onChange={(e) => {
+
+
+                                                           setEmail(e.target.value);
+
+                                                       }}/>
+                                            </MDBCol>
+
+                                        </div>
+
+
+                                        <div className="form-group">
+
+                                            <MDBCol md='6'>
+                                                <label htmlFor="name" className="form-label">fax</label>
+                                                <input type="text" className="form-control" id="fax"
+                                                       placeholder="Enter Your fax"
+                                                       value={fax}
+                                                       onChange={(e) => {
+
+
+                                                           setFax(e.target.value);
+
+                                                       }}/>
+                                            </MDBCol>
+
+                                        </div>
+
+
+                                        <div className="form-group">
+                                            <MDBCol md='6'>
+
+                                                <label htmlFor="name" className="form-label">Hospital Type</label>
+
+                                                <select value={type} className="form-control"
+                                                        onChange={(e) => {
+
+                                                            setType(e.target.value);
+
+                                                        }}>
+                                                    <option value='General Hospital'>
+                                                        General Hospital
+                                                    </option>
+                                                    <option value='private Hospital'>
+                                                        Private Hospital
+                                                    </option>
+                                                </select>
+                                            </MDBCol>
+
+
+                                        </div>
+
+                                        <div className="form-group">
+
+                                            <MDBCol md='6'>
+
+                                                <label htmlFor="name" className="form-label">Description</label>
+                                                <input type="text" className="form-control" id="description"
+                                                       placeholder="Enter Total No Of Days in Sri Lanka"
+                                                       value={description}
+                                                       onChange={(e) => {
+
+
+                                                           setDescription(e.target.value);
+
+                                                       }}/>
+                                            </MDBCol>
+
+                                        </div>
+
+                                        <div className="form-group">
+                                            <MDBRow>
+                                                <Col md='6'>
+                                                    <label htmlFor="description">Image</label>
+                                                    <input type="file" className="form-control" id="fax"
+                                                           aria-describedby="emailHelp" placeholder="Enter fax"
+                                                           onChange={onChangeImage}
+                                                           required/>
+                                                    <br></br>
+                                                </Col>
+                                            </MDBRow>
+
+                                        </div>
+
+                                        <br></br>
+                                        <button type="submit" className="btn btn-success">Submit</button>
+
+                                        <br></br>
+                                    </MDBCard>
+                                </MDBRow>
+                            </MDBContainer>
+
+
+                        </form>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    )
+
+
 }
 
 export default EditHospital;
