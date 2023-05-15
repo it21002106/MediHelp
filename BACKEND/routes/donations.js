@@ -2,6 +2,7 @@ const router = require("express").Router();
 let Donation = require("../models/Donation");
 
 router.route("/add").post((req, res)=>{
+    const eventId = req.body.eventId;
     const dName = req.body.dName;
     const dEmail = req.body.dEmail;
     const dMobile = Number(req.body.dMobile);
@@ -11,6 +12,7 @@ router.route("/add").post((req, res)=>{
     const dCardCVV = Number(req.body.dCardCVV);
 
     const newDonation = new Donation({
+        eventId,
         dName,
         dEmail,
         dMobile,
@@ -37,9 +39,10 @@ router.route("/").get((req,res)=>{
 
 router.route("/update/:id").put(async(req, res) => {
     let userID = req.params.id;
-    const { dName, dEmail,dMobile,dAmount,dCardNumber,dCardExpDate,dCardCVV } = req.body;
+    const {eventId, dName, dEmail,dMobile,dAmount,dCardNumber,dCardExpDate,dCardCVV } = req.body;
     
     const updateDonation = {
+        eventId,
         dName,
         dEmail,
         dMobile,
@@ -70,9 +73,20 @@ router.route("/delete/:id").delete(async(req, res) => {
     })
 })
 
+router.route("/getMyDonations/:email").get((req,res)=>{
+    let email2 = req.params.email;
+
+    Donation.find({email2}).then((donations)=>{
+
+        res.json(donations)
+    }).catch((err)=>{
+        console.log(err)
+    })
+})
+
 router.route("/get/:id").get(async(req, res)=>{
     let userID = req.params.id;
-    const user = await Donation.findById(userID).then(()=>{
+    const user = await Donation.find(userID).then(()=>{
         res.status(200).send({status:"Details fetched", user:user})
     }).catch((err)=>{
         console.log(err);
