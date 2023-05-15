@@ -12,29 +12,31 @@ import {
     MDBSelect,
     MDBRadio
 }
-
     from 'mdb-react-ui-kit';
 import {Card, Container, Row, Col} from "react-bootstrap";
 import {addHospital} from "../services/hospitalService";
 import AdminDashbroad from "./AdminDashbroad";
+//import {addevent} from "../services/eventService";
+import {addPrescription} from "../services/prescriptionService";
 import Swal from "sweetalert2";
 
 
 
-export default function Addhospital() {
+export default function AddPrescription() {
 
-    const [hospitalName, setHospitalName] = useState("");
+    const [clientName, setClientName] = useState("");
     const [mobileNumber, setMobileNumber] = useState("");
     const [email, setEmail] = useState("");
-    const [fax, setFax] = useState("");
-    const [type, setType] = useState("General Hospital");
+    const [province, setProvince] = useState("");
+    const [district, setDistrict] = useState("");
     const [description, setDescription] = useState("");
     const [image, setImage] = useState("");
 
 
+
     const navigate = useNavigate();
 
-   function onChangeImage(e)  {
+    function onChangeImage(e)  {
         if (e.target.type === "file") {
             const scope = this;
             let reader = new FileReader();
@@ -52,20 +54,18 @@ export default function Addhospital() {
 
     function  senddata(e) {
         e.preventDefault();
-        const hospital = {
-            hospitalName,
+        const prescription = {
+            clientName,
             mobileNumber,
             email,
-            fax,
-            type,
+            province,
+            district,
             description,
-            image,
+            image
 
         }
 
-
-
-        const hosp =  addHospital(hospital);
+        const eve =  addPrescription(prescription);
 
             Swal.fire({
                 title: 'Sucess!',
@@ -75,7 +75,7 @@ export default function Addhospital() {
                 timer: 1500
             })
 
-            navigate("/all");
+            navigate("/allPrescriptions");
 
     }
 
@@ -93,7 +93,7 @@ export default function Addhospital() {
 
 
                     <div className="container"><br></br>
-                        <h2>Add Hospital Details</h2>
+                        <h2>Add Presctiption Details</h2>
 
                         <form className="row g-2" onSubmit={senddata}>
 
@@ -101,16 +101,18 @@ export default function Addhospital() {
                             <MDBContainer fluid>
                                 <MDBRow className='justify-content-center align-items-center m-5'>
                                     <MDBCard>
+
+
                                         <div className="col-auto">
 
                                             <MDBCol md='6'>
-                                                <label>Hospital Name</label>
-                                                <input type="text" className="form-control" id="hospitalName"
-                                                       placeholder="Enter hospital name"
+                                                <label>Client Name</label>
+                                                <input type="text" className="form-control" id="clientName"
+                                                       placeholder="Enter client name"
 
                                                        onChange={(e) => {
 
-                                                           setHospitalName(e.target.value);
+                                                           setClientName(e.target.value);
 
                                                        }} required/>
                                                 <br></br>
@@ -119,9 +121,9 @@ export default function Addhospital() {
 
                                         <div className="form-group">
                                             <MDBCol md='6'>
-                                                <label htmlFor="modelNumber">Mobile Number</label>
-                                                <input type="text" className="form-control" id="modelNumber"
-                                                       placeholder="Enter Model Number"
+                                                <label htmlFor="mobile">Mobile</label>
+                                                <input type="number" className="form-control" id="mobile"
+                                                       aria-describedby="emailHelp" placeholder="Enter mobile"
 
                                                        onChange={(e) => {
 
@@ -131,6 +133,7 @@ export default function Addhospital() {
                                                 <br></br>
                                             </MDBCol>
                                         </div>
+
 
                                         <div className="form-group">
                                             <MDBCol md='6'>
@@ -149,13 +152,13 @@ export default function Addhospital() {
 
                                         <div className="form-group">
                                             <MDBCol md='6'>
-                                                <label htmlFor="fax">Fax</label>
-                                                <input type="number" className="form-control" id="fax"
-                                                       aria-describedby="emailHelp" placeholder="Enter fax"
+                                                <label htmlFor="province">Province</label>
+                                                <input type="text" className="form-control" id="province"
+                                                       aria-describedby="emailHelp" placeholder="Enter province"
 
                                                        onChange={(e) => {
 
-                                                           setFax(e.target.value);
+                                                           setProvince(e.target.value);
 
                                                        }} required/>
                                                 <br></br>
@@ -164,23 +167,20 @@ export default function Addhospital() {
 
                                         <div className="form-group">
                                             <MDBCol md='6'>
-                                                <label htmlFor="nationality">Hospital Type</label>
-                                                <select className="form-control"
-                                                        onChange={(e) => {
+                                                <label htmlFor="district">District</label>
+                                                <input type="text" className="form-control" id="district"
+                                                       aria-describedby="emailHelp" placeholder="Enter district"
 
-                                                            setType(e.target.value);
+                                                       onChange={(e) => {
 
-                                                        }}>
-                                                    <option value='General Hospital'>
-                                                        General Hospital
-                                                    </option>
-                                                    <option value='private Hospital'>
-                                                        Private Hospital
-                                                    </option>
-                                                </select>
-                                                <br/>
+                                                           setDistrict(e.target.value);
+
+                                                       }} required/>
+                                                <br></br>
                                             </MDBCol>
                                         </div>
+
+
 
 
                                         <div className="form-group">
@@ -207,7 +207,7 @@ export default function Addhospital() {
                                                 <Col md='6'>
                                                     <label htmlFor="description">Image</label>
                                                     <input type="file" className="form-control" id="fax"
-                                                           aria-describedby="emailHelp" placeholder="Enter fax"
+                                                           aria-describedby="emailHelp"
                                                            onChange={onChangeImage}
                                                            required/>
                                                     <br></br>
@@ -217,8 +217,8 @@ export default function Addhospital() {
                                         </div>
 
                                         <button type="submit" className="btn btn-success">Submit</button>
-
                                         <br></br>
+
                                     </MDBCard>
                                 </MDBRow>
                             </MDBContainer>
