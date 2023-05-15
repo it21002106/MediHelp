@@ -3,27 +3,27 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const ProjectSchema = new Schema({
-    pName : {
+    projectName : {
         type : String,
         require : true
     },
-    pDescription : {
+    projectDescription : {
         type : String,
         require : true
     },
-    pOrganisation : {
+    projectOrganisation : {
         type: String,
         require : true
     },
-    pStartDate : {
+    projectStartDate : {
         type: String,
         require : true
     },
-    pEndDate : {
+    projectEndDate : {
         type : String,
         require : true
     },
-    pLocation : {
+    projectLocation : {
         type : String,
         require : true
     }

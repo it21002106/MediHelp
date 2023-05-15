@@ -2,9 +2,9 @@ import React, {useState, useEffect} from "react";
 import axios from "axios";
 import {useNavigate} from "react-router-dom";
 import Swal from "sweetalert2";
-//import {addHospital, deleteHospitalByID, getAllHospitals} from "../services/hospitalService";
+import {addHospital, deleteHospitalByID, getAllHospitals} from "../services/hospitalService";
 import AdminDashbroad from "./AdminDashbroad";
-//import {deletePrescriptionByID} from "../services/prescriptionService";
+import {deletePrescriptionByID} from "../services/prescriptionService";
 
 
 export default function AllDonations() {
@@ -48,7 +48,7 @@ export default function AllDonations() {
         })
     }
 
-    /*function deleteHospital(userId) {
+    function deleteHospital(userId) {
         Swal.fire({
             title: "Are you sure?",
             text: "You will not be able to recover this item!",
@@ -67,7 +67,7 @@ export default function AllDonations() {
             }
         });
 
-    }*/
+    }
 
 
     return (

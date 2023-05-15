@@ -14,7 +14,7 @@ import {
 }
     from 'mdb-react-ui-kit';
 import {Card, Container, Row, Col} from "react-bootstrap";
-//import {addHospital} from "../services/hospitalService";
+import {addHospital} from "../services/hospitalService";
 import {addProject} from "../services/projectService";
 import AdminDashbroad from "./AdminDashbroad";
 import Swal from "sweetalert2";

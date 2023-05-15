@@ -3,6 +3,11 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const DonationSchema = new Schema({
+
+    eventId : {
+        type : String,
+        require : true
+    },
     dName : {
         type : String,
         require : true
