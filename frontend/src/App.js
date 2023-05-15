@@ -9,6 +9,10 @@ import Addhospital from "./Component/Addhospital";
 import Login from "./Component/login";
 import Signup from "./Component/signUp";
 
+import AllPrescriptions from "./Component/AllPrescriptions";
+import AddPrescription from "./Component/AddPrescription";
+import EditPrescription from "./Component/EditPrescription";
+
 
 
 
@@ -21,6 +25,10 @@ function App() {
                 <Route path="/Update/:id" element={<EditHospital/>}/>
                 <Route path="/SupReport" element={<GenRepo/>}/>
                 <Route path="/add" element={<Addhospital/>}/>
+
+                <Route path="/allPrescriptions" element={<AllPrescriptions/>}/>
+                <Route path="/addPrescriptions" element={<AddPrescription/>}/>
+                <Route path="/UpdatePrescription/:id" element={<EditPrescription/>}/>
                
                
               
