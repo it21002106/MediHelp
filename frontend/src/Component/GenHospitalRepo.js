@@ -88,7 +88,7 @@ export default function Hospitalreport({search,setSearch}){
                       <th scope="col">Fax</th>
                       <th scope="col">Hospital Type</th>
                       <th scope="col">Description</th>
-                      <th scope="col">Action</th>
+                      
                       
                   </tr>
               </thead>
@@ -97,11 +97,11 @@ export default function Hospitalreport({search,setSearch}){
                       <tr key={id}>
                           <td>{id}</td>
                           
-                          <td>{Hospital.hospitalname}</td>
-                          <td>{Hospital.mobilenumber}</td>
+                          <td>{Hospital.hospitalName}</td>
+                          <td>{Hospital.mobileNumber}</td>
                           <td>{Hospital.email}</td>
                           <td>{Hospital.fax}</td>
-                          <td>{Hospital.hospitaltype}</td>
+                          <td>{Hospital.type}</td>
                           <td>{Hospital.description}</td>
                           
                           
@@ -111,11 +111,11 @@ export default function Hospitalreport({search,setSearch}){
                 hospitals.map((Hospital,id) => (
                   <tr key={id}>
                       <td>{id}</td>
-                      <td>{Hospital.hospitalname}</td>
-                      <td>{Hospital.mobilenumber}</td>
+                      <td>{Hospital.hospitalName}</td>
+                      <td>{Hospital.mobileNumber}</td>
                       <td>{Hospital.email}</td>
                       <td>{Hospital.fax}</td>
-                      <td>{Hospital.hospitaltype}</td>
+                      <td>{Hospital.type}</td>
                       <td>{Hospital.description}</td>
                       
                      
@@ -129,5 +129,5 @@ export default function Hospitalreport({search,setSearch}){
 
   </div>
 
-  )
+ )
 };

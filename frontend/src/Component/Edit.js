@@ -208,12 +208,28 @@ function EditHospital(userId) {
                                                             setType(e.target.value);
 
                                                         }}>
-                                                    <option value='General Hospital'>
-                                                        General Hospital
+                                                     <option value='National Hospital of Sri Lanka'>
+                                                    National Hospital of Sri Lanka
                                                     </option>
                                                     <option value='private Hospital'>
                                                         Private Hospital
                                                     </option>
+                                                    <option value='Teaching Hospitals'>
+                                                    Teaching Hospitals
+                                                    </option>
+                                                    <option value='Provincial General Hospitals'>
+                                                    Provincial General Hospitals
+                                                    </option>
+                                                    <option value='District General Hospitals '>
+                                                    District General Hospitals 
+                                                    </option>
+                                                    <option value='Base Hospitalss '>
+                                                    Base Hospitals
+                                                    </option>
+                                                    <option value='Divisional Hospitals'>
+                                                    Divisional Hospitals 
+                                                    </option>
+
                                                 </select>
                                             </MDBCol>
 

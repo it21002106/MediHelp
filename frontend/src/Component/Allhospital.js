@@ -87,7 +87,7 @@ export default function Allhospital() {
                         <input type="search" className="form-control rounded" placeholder="Search" aria-label="Search"
                                aria-describedby="search-addon" value={value}
                                onChange={filterData}
-                        />
+                        /> {" "}      {" "} 
 
                         <span className="input-group-text border-0" id="search-addon">
                <i className="fas fa-search"></i>
@@ -98,12 +98,12 @@ export default function Allhospital() {
 
                     <button className="btn btn-success mr-1"><a href="/add"
                                                                 style={{textDecoration: 'none', color: 'white'}}>Add New
-                        Hospital</a></button>
+                        Hospital</a></button> {'    '}
 
 
-                    {/*<button className="btn btn-success"><a href="/SupReport"*/}
-                    {/*                                       style={{textDecoration: 'none', color: 'white'}}>Genarate*/}
-                    {/*    Report</a></button>*/}
+                    <button className="btn btn-success"><a href="/SupReport"
+                                                           style={{textDecoration: 'none', color: 'white'}}>Genarate
+                      Report</a></button>
                     <br></br>
 
 
@@ -112,6 +112,7 @@ export default function Allhospital() {
                         <thead>
                         <tr>
                             {/*<th scope="col">ID</th>*/}
+                            <th scope="col"style={{width: '150px'}}>Image</th>
                             <th scope="col">Hospital Name</th>
                             <th scope="col">Mobile Number</th>
                             <th scope="col">Email</th>
@@ -125,6 +126,14 @@ export default function Allhospital() {
                         {value.length > 0 ? tableFilter.map((Hospital, id) => (
                                 <tr key={id}>
                                     {/*<td>{id}</td>*/}
+
+                                    <td style={{width: '150px'}}>
+                                        <img style={{ width: '50px', height: '50px' }} src={Hospital.image} alt="Example image" />
+                                        {/*<a href={Hospital.image} target='_blank'>View</a>*/}
+
+                                    </td>
+
+
                                     <td>{Hospital.hospitalName}</td>
                                     <td>{Hospital.mobileNumber}</td>
                                     <td>{Hospital.email}</td>
@@ -148,6 +157,15 @@ export default function Allhospital() {
                             hospitals.map((Hospital, id) => (
                                 <tr key={id}>
                                     {/*<td>{id}</td>*/}
+
+
+                                    <td style={{width: '150px'}}>
+
+                                                 <img style={{ width: '50px', height: '50px' }} src={Hospital.image} alt="Example image" />
+                                                  {/*<a href={Hospital.image} target='_blank'>View</a>*/}
+                                                 </td>
+
+
                                     <td>{Hospital.hospitalName}</td>
                                     <td>{Hospital.mobileNumber}</td>
                                     <td>{Hospital.email}</td>
