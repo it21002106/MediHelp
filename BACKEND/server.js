@@ -47,8 +47,13 @@ app.use("/project",projectRouter);
 const prescriptionRouter = require("./routes/prescription.js");
 app.use("/prescription",prescriptionRouter);
 
-// const userRoutes = require("./routes/UserRoutes.js");
-// app.use('/user', userRoutes);
+
+
+
+const userRoutes = require("./routes/UserRoutes.js");
+app.use('/user', userRoutes);
+
+
 
 
 app.listen(PORT, () => {
