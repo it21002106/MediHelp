@@ -28,6 +28,8 @@ import GenPrec from "./Component/GenPrescriptionRepo";
 
 
 
+
+
 function App() {
     return (
         <Router>
