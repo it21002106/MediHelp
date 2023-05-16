@@ -6,7 +6,7 @@ import axios from "axios";
 
 export default function Hospitalreport({search,setSearch}){
 
-    const [hospitals,sethospital] = useState([]);
+    const [prescriptions,setprescription] = useState([]);
 
 
      const[value , setValue] = useState('');
@@ -33,14 +33,14 @@ export default function Hospitalreport({search,setSearch}){
 */
   useEffect(() => {
 
-    function gethospital()
+    function getprescription()
     {
        
   
-      axios.get("http://localhost:8070/hospital/").then((res) => {
+      axios.get("http://localhost:8070/prescription/").then((res) => {
   
   
-         sethospital(res.data);
+      setprescription(res.data);
   
       }).catch((err) => {
   
@@ -48,7 +48,7 @@ export default function Hospitalreport({search,setSearch}){
       })
     }
   
-    gethospital();
+    getprescription();
     },[]); 
 
  /* const renderClass = (Hospital, id) => {
@@ -82,41 +82,42 @@ export default function Hospitalreport({search,setSearch}){
               <thead>
                   <tr>
                   <th scope="col">ID</th>
-                      <th scope="col">Hospital Name</th>
-                      <th scope="col">Mobile Number</th>
-                      <th scope="col">Email</th>
-                      <th scope="col">Fax</th>
-                      <th scope="col">Hospital Type</th>
-                      <th scope="col">Description</th>
+                            <th scope="col">Client Name</th>
+                            <th scope="col">Province</th>
+                            <th scope="col">District</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Mobile</th>
+                            <th scope="col">Description</th>
                       
                       
                   </tr>
               </thead>
               <tbody>
-              {value.length > 0 ? tableFilter.map((Hospital,id) => (
+              {value.length > 0 ? tableFilter.map((prescription,id) => (
                       <tr key={id}>
                           <td>{id}</td>
                           
-                          <td>{Hospital.hospitalName}</td>
-                          <td>{Hospital.mobileNumber}</td>
-                          <td>{Hospital.email}</td>
-                          <td>{Hospital.fax}</td>
-                          <td>{Hospital.type}</td>
-                          <td>{Hospital.description}</td>
+                                    <td>{prescription.clientName}</td>
+                                    <td>{prescription.province}</td>
+                                    <td>{prescription.district}</td>
+                                    <td>{prescription.email}</td>
+                                    <td>{prescription.mobileNumber}</td>
+                                    <td>{prescription.description}</td>
                           
                           
                       </tr>
                   ))
                 :
-                hospitals.map((Hospital,id) => (
+                prescriptions.map((prescription,id) => (
                   <tr key={id}>
                       <td>{id}</td>
-                      <td>{Hospital.hospitalName}</td>
-                      <td>{Hospital.mobileNumber}</td>
-                      <td>{Hospital.email}</td>
-                      <td>{Hospital.fax}</td>
-                      <td>{Hospital.type}</td>
-                      <td>{Hospital.description}</td>
+
+                                    <td>{prescription.clientName}</td>
+                                    <td>{prescription.province}</td>
+                                    <td>{prescription.district}</td>
+                                    <td>{prescription.email}</td>
+                                    <td>{prescription.mobileNumber}</td>
+                                    <td>{prescription.description}</td>
                       
                      
                   </tr>

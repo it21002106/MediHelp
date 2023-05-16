@@ -88,7 +88,7 @@ export default function Hospitalreport({search,setSearch}){
                       <th scope="col">Fax</th>
                       <th scope="col">Hospital Type</th>
                       <th scope="col">Description</th>
-                      
+                      <th scope="col">Action</th>
                       
                   </tr>
               </thead>
@@ -129,5 +129,5 @@ export default function Hospitalreport({search,setSearch}){
 
   </div>
 
- )
+  )
 };
