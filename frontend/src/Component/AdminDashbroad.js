@@ -1,5 +1,7 @@
 import React from 'react';
 import './style.css';
+import HomeButton from './Home';
+import './Homebtn.css';
 
 function AdminDashbroad() {
   return (
@@ -7,9 +9,16 @@ function AdminDashbroad() {
 
 <div className="sidebar">
         <div className="logo-details">
-          <div className="logo_name">MediHelp</div>
+          <span>
+            <div className="homeBtn"> <HomeButton/> </div>
+          <div className="logo_name">
+            MediHelp
+          </div>
+          </span>
+          
           <i className='bx bx-menu' id="btn"></i>
         </div>
+        
         <ul className="nav-list">
           {/*<li>*/}
           {/*  <a href="#">*/}
