@@ -38,7 +38,7 @@ function Navbar() {
       <header className="header">
         <div className="header__content">
           <Link to="/home" className="header__content__logo">
-            MediCare
+            MediHelp
           </Link>
           <nav
               className={`${"header__content__nav"} 

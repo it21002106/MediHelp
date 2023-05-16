@@ -22,7 +22,7 @@ import Signup from "./Component/signUp";
 import AllPrescriptions from "./Component/AllPrescriptions";
 import AddPrescription from "./Component/AddPrescription";
 import EditPrescription from "./Component/EditPrescription";
- Ranjula/Dev
+
 import Home from './Component/Home';
 
 import GenPrec from "./Component/GenPrescriptionRepo"; 
@@ -30,7 +30,7 @@ import GenPrec from "./Component/GenPrescriptionRepo";
 
 
 
- main
+
 
 
 
@@ -41,13 +41,13 @@ function App() {
             <Routes>
                 <Route path="/" element={<Login/>}/>
 
- Ranjula/Dev
+
                 <Route path='/adminHome' element={<AdminHome/>}/>
 
                 
 
 
- main
+
                 <Route path="/all" element={<Allhospital/>}/>
                 <Route path="/Update/:id" element={<EditHospital/>}/>
                 <Route path="/SupReport" element={<GenRepo/>}/>
