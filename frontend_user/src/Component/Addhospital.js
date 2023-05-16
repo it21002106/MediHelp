@@ -18,6 +18,7 @@ import {Card, Container, Row, Col} from "react-bootstrap";
 import {addHospital} from "../services/hospitalService";
 import AdminDashbroad from "./AdminDashbroad";
 import Swal from "sweetalert2";
+import Navbar from "./NavBar";
 
 
 
@@ -27,7 +28,7 @@ export default function Addhospital() {
     const [mobileNumber, setMobileNumber] = useState("");
     const [email, setEmail] = useState("");
     const [fax, setFax] = useState("");
-    const [type, setType] = useState("General Hospital");
+    const [type, setType] = useState("");
     const [description, setDescription] = useState("");
     const [image, setImage] = useState("");
 
@@ -82,13 +83,12 @@ export default function Addhospital() {
 
     return (
 
-        <div className="row">
+        <div >
 
-            <div className="col-md-3">
-                <AdminDashbroad></AdminDashbroad>
-            </div>
+            <Navbar></Navbar>
 
-            <div className="col-md-9">
+
+            <div >
                 <div className="maincontainer">
 
 
@@ -171,29 +171,12 @@ export default function Addhospital() {
                                                             setType(e.target.value);
 
                                                         }}>
-                                                    <option value='National Hospital of Sri Lanka'>
-                                                    National Hospital of Sri Lanka
+                                                    <option value='General Hospital'>
+                                                        General Hospital
                                                     </option>
                                                     <option value='private Hospital'>
                                                         Private Hospital
                                                     </option>
-                                                    <option value='Teaching Hospitals'>
-                                                    Teaching Hospitals
-                                                    </option>
-                                                    <option value='Provincial General Hospitals'>
-                                                    Provincial General Hospitals
-                                                    </option>
-                                                    <option value='District General Hospitals '>
-                                                    District General Hospitals 
-                                                    </option>
-                                                    <option value='Base Hospitalss '>
-                                                    Base Hospitals
-                                                    </option>
-                                                    <option value='Divisional Hospitals'>
-                                                    Divisional Hospitals 
-                                                    </option>
-
-
                                                 </select>
                                                 <br/>
                                             </MDBCol>

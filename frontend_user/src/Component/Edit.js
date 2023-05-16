@@ -18,6 +18,7 @@ import {useNavigate, useParams} from 'react-router-dom';
 import AdminDashbroad from "./AdminDashbroad";
 import {updateHospital} from "../services/hospitalService";
 import Swal from "sweetalert2";
+import Navbar from "./NavBar";
 
 function EditHospital(userId) {
 
@@ -108,14 +109,12 @@ function EditHospital(userId) {
     return (
 
 
-        <div className='row'>
+        <div >
 
-            <div className="col-md-3">
+            <Navbar></Navbar>
 
-                <AdminDashbroad></AdminDashbroad>
-            </div>
 
-            <div className="col-md-9">
+            <div >
                 <div className="maincontainer">
 
 
@@ -208,28 +207,12 @@ function EditHospital(userId) {
                                                             setType(e.target.value);
 
                                                         }}>
-                                                     <option value='National Hospital of Sri Lanka'>
-                                                    National Hospital of Sri Lanka
+                                                    <option value='General Hospital'>
+                                                        General Hospital
                                                     </option>
                                                     <option value='private Hospital'>
                                                         Private Hospital
                                                     </option>
-                                                    <option value='Teaching Hospitals'>
-                                                    Teaching Hospitals
-                                                    </option>
-                                                    <option value='Provincial General Hospitals'>
-                                                    Provincial General Hospitals
-                                                    </option>
-                                                    <option value='District General Hospitals '>
-                                                    District General Hospitals 
-                                                    </option>
-                                                    <option value='Base Hospitalss '>
-                                                    Base Hospitals
-                                                    </option>
-                                                    <option value='Divisional Hospitals'>
-                                                    Divisional Hospitals 
-                                                    </option>
-
                                                 </select>
                                             </MDBCol>
 
