@@ -16,7 +16,7 @@ import {
 import {Card, Container, Row, Col} from "react-bootstrap";
 import {addHospital} from "../services/hospitalService";
 import AdminDashbroad from "./AdminDashbroad";
-//import {addevent} from "../services/eventService";
+import {addevent} from "../services/eventService";
 import Swal from "sweetalert2";
 import {loginUser} from "../services/UserServices";
 

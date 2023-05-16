@@ -16,7 +16,7 @@ import {
 import {get} from 'lodash';
 import {useNavigate, useParams} from 'react-router-dom';
 import AdminDashbroad from "./AdminDashbroad";
-//import {updateHospital} from "../services/hospitalService";
+import {updateHospital} from "../services/hospitalService";
 import Swal from "sweetalert2";
 
 function EditProject(userId) {
