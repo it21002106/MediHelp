@@ -21,6 +21,9 @@ import Signup from "./Component/signUp";
 import AllPrescriptions from "./Component/AllPrescriptions";
 import AddPrescription from "./Component/AddPrescription";
 import EditPrescription from "./Component/EditPrescription";
+import GenPrec from "./Component/GenPrescriptionRepo"; 
+
+
 
 
 
@@ -31,8 +34,6 @@ function App() {
             <Routes>
                 <Route path="/" element={<Login/>}/>
 
-                
-
                 <Route path="/all" element={<Allhospital/>}/>
                 <Route path="/Update/:id" element={<EditHospital/>}/>
                 <Route path="/SupReport" element={<GenRepo/>}/>
@@ -42,19 +43,14 @@ function App() {
                 <Route path="/allPrescriptions" element={<AllPrescriptions/>}/>
                 <Route path="/addPrescriptions" element={<AddPrescription/>}/>
                 <Route path="/UpdatePrescription/:id" element={<EditPrescription/>}/>
+                <Route path="/PresRport" element={<GenPrec/>}/>
 
 
-               
-               
-              
                 <Route path="/signUp" element={<Signup/>}/>
                
 
                 <Route path="/allProjects" element={<AllProject/>}/>
                 <Route path="/addProjects" element={<AddProject/>}/>
-                
-                
-                
                 <Route path="/UpdateProject/:id" element={<EditProject/>}/>
                 
                 <Route path="/allDonations" element={<AllDonations/>}/>
