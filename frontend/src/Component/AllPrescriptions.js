@@ -105,12 +105,12 @@ export default function AllPrescriptions() {
 
                     <button className="btn btn-success mr-1"><a href="/addPrescriptions"
                                                                 style={{textDecoration: 'none', color: 'white'}}>Add New
-                        Prescription</a></button>
+                        Prescription</a></button>  {'  '}
 
 
-                    {/*<button className="btn btn-success"><a href="/SupReport"*/}
-                    {/*                                       style={{textDecoration: 'none', color: 'white'}}>Genarate*/}
-                    {/*    Report</a></button>*/}
+                    <button className="btn btn-success"><a href="/PresRport"
+                                                          style={{textDecoration: 'none', color: 'white'}}>Genarate
+                        Report</a></button>
                     <br></br>
 
 

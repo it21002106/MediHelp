@@ -13,9 +13,9 @@ import {
     MDBRadio
 }
     from 'mdb-react-ui-kit';
-import {Card, Container, Row, Col} from "react-bootstrap";
-import {addHospital} from "../services/hospitalService";
-import AdminDashbroad from "./AdminDashbroad";
+//import {Card, Container, Row, Col} from "react-bootstrap";
+//import {addHospital} from "../services/hospitalService";
+//import AdminDashbroad from "./AdminDashbroad";
 //import {addevent} from "../services/eventService";
 import Swal from "sweetalert2";
 import {loginUser, signUp} from "../services/UserServices";
@@ -32,7 +32,7 @@ export default function Signup() {
     const navigate = useNavigate();
 
 
-    async function register(e) {
+   async function register(e) {
         e.preventDefault();
         const user = {
             name,
@@ -42,26 +42,26 @@ export default function Signup() {
             nic
         }
 
-        try {
-            const eve = await signUp(user);
-            Swal.fire({
-                title: 'Success!',
-                text: 'Logged in successfully',
-                icon: 'success',
-                showConfirmButton: false,
-                timer: 1500
-            });
-            navigate('/');
-        } catch (error) {
-            console.error(error);
-            Swal.fire({
-                title: 'Error!',
-                text: 'Failed to log in',
-                icon: 'error',
-                showConfirmButton: false,
-                timer: 1500
-            });
-        }
+       try {
+           const eve = await signUp(user);
+           Swal.fire({
+               title: 'Success!',
+               text: 'Logged in successfully',
+               icon: 'success',
+               showConfirmButton: false,
+               timer: 1500
+           });
+           navigate('/');
+       } catch (error) {
+           console.error(error);
+           Swal.fire({
+               title: 'Error!',
+               text: 'Failed to log in',
+               icon: 'error',
+               showConfirmButton: false,
+               timer: 1500
+           });
+       }
 
     }
 
@@ -77,7 +77,7 @@ export default function Signup() {
 
 
                         <div className="container"><br></br>
-                            <h1 className='text-center' style={{color:"black"}}>Register To MediHelp - Admin</h1>
+                            <h1 className='text-center' style={{color:"black"}}>Register To MediCare</h1>
 
                             <form className="row g-2" onSubmit={register}>
 
