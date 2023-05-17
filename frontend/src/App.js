@@ -33,7 +33,6 @@ import GenPrec from "./Component/GenPrescriptionRepo";
 
 
 
- 
 
 
 
@@ -45,13 +44,11 @@ function App() {
             <Routes>
                 <Route path="/" element={<Login/>}/>
 
- 
                 <Route path='/adminHome' element={<AdminHome/>}/>
 
                 
 
 
- 
                 <Route path="/all" element={<Allhospital/>}/>
                 <Route path="/Update/:id" element={<EditHospital/>}/>
                 <Route path="/SupReport" element={<GenRepo/>}/>
