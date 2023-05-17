@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import AdminDashbroad from "./AdminDashbroad";
+import Graph from "./Graph";
 
 export default function AdminHome () {
 
@@ -29,7 +30,13 @@ export default function AdminHome () {
             </div>
             <div className="col-md-9" >
             <div className="container"><br/>
-                    <h2>MediHelp Home</h2><br></br>
+                    
+                    <div>
+                    <Graph/>
+                    </div>
+                    
+                    <br/>
+                    <br/>
 
                     <div className="input-group rounded">
 
@@ -42,9 +49,11 @@ export default function AdminHome () {
                <i className="fas fa-search"></i>
              </span>
                     </div>
+
                 </div>
             </div>
         </div>
+
         </>
     )
 };

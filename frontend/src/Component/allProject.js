@@ -5,6 +5,7 @@ import Swal from "sweetalert2";
 import {addHospital, deleteHospitalByID, getAllHospitals} from "../services/hospitalService";
 import {deleteProjectByID} from "../services/projectService";
 import AdminDashbroad from "./AdminDashbroad";
+import { Link } from "react-router-dom";
 
 
 export default function AllProject() {
@@ -108,11 +109,17 @@ export default function AllProject() {
                     {/*<button className="btn btn-success"><a href="/SupReport"*/}
                     {/*                                       style={{textDecoration: 'none', color: 'white'}}>Genarate*/}
                     {/*    Report</a></button>*/}
+                    {" "}
+                    <Link to = '/GenProjectRepo' className="btn btn-success">
+                       Generate Report
+                    </Link>
+
+
                     <br></br>
 
 
                     <br></br>
-                    <table className="table table-success table-striped">
+                    <table id="report-table" className="table table-success table-striped">
                         <thead>
                         <tr>
                             {/*<th scope="col">ID</th>*/}

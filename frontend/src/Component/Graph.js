@@ -1,75 +1,83 @@
-// Import Chart.js
-import Chart from 'chart.js/auto';
+import Chart from "chart.js/auto";
+import React, { useEffect, useRef } from "react";
+import { LinearScale, CategoryScale, PointElement, LineController, Tooltip } from "chart.js";
 
-// Get the canvas element
-const chartEl = document.getElementById('crudChart');
+const Graph = () => {
+  const chartRef = useRef(null);
 
-// Create a new Chart instance with the canvas element
-const chart = new Chart(chartEl, {
-  type: 'bar',
-  data: {
-    labels: ['Add', 'Get', 'Update', 'Delete'],
-    datasets: [
-      {
-        label: 'CRUD Function Usage',
-        data: [0, 0, 0, 0],
-        backgroundColor: [
-          'rgba(255, 99, 132, 0.2)',
-          'rgba(54, 162, 235, 0.2)',
-          'rgba(255, 206, 86, 0.2)',
-          'rgba(75, 192, 192, 0.2)',
+  useEffect(() => {
+    const ctx = chartRef.current.getContext("2d");
+
+    // Register the required scales
+    Chart.register(LinearScale, CategoryScale, PointElement, LineController, Tooltip);
+
+    // Create your chart here using the 'Chart' object
+    const chart = new Chart(ctx, {
+      type: "line",
+      data: {
+        labels: ["January", "February", "March", "April", "May", "June"],
+        datasets: [
+          {
+            label: "Health Projects",
+            data: [10, 20, 20, 20, 50, 45],
+            borderColor: "red",
+            fill: false,
+          },
+          {
+            label: "Health Events",
+            data: [5, 10, 20, 30, 45, 45],
+            borderColor: "blue",
+            fill: false,
+          },
+          {
+            label: "Donations",
+            data: [20, 23, 18, 35, 48, 55],
+            borderColor: "green",
+            fill: false,
+          },
         ],
-        borderColor: [
-          'rgba(255, 99, 132, 1)',
-          'rgba(54, 162, 235, 1)',
-          'rgba(255, 206, 86, 1)',
-          'rgba(75, 192, 192, 1)',
-        ],
-        borderWidth: 1,
       },
-    ],
-  },
-  options: {
-    scales: {
-      y: {
-        beginAtZero: true,
+      options: {
+        responsive: true,
+        scales: {
+          x: {
+            display: true,
+            title: {
+              display: true,
+              text: "Month",
+            },
+          },
+          y: {
+            display: true,
+            title: {
+              display: true,
+              text: "Count",
+            },
+          },
+        },
+        plugins: {
+          tooltip: {
+            enabled: true,
+          },
+          title: {
+            display: true,
+            text: "Multiple Lines Chart",
+          },
+        },
       },
-    },
-  },
-});
-
-// Function to fetch data from the backend and update the chart
-function updateChart() {
-  fetch('/api/projects')
-    .then((response) => response.json())
-    .then((data) => {
-      const counts = {
-        add: 0,
-        get: 0,
-        update: 0,
-        delete: 0,
-      };
-
-      data.forEach((project) => {
-        if (project._id.includes('add')) {
-          counts.add++;
-        } else if (project._id.includes('get')) {
-          counts.get++;
-        } else if (project._id.includes('update')) {
-          counts.update++;
-        } else if (project._id.includes('delete')) {
-          counts.delete++;
-        }
-      });
-
-      chart.data.datasets[0].data = [counts.add, counts.get, counts.update, counts.delete];
-      chart.update();
-    })
-    .catch((error) => {
-      console.error(error);
     });
-}
 
-// Call the updateChart function initially and every 5 seconds
-updateChart();
-setInterval(updateChart, 5000);
+    return () => {
+      // Cleanup code
+      chart.destroy();
+    };
+  }, []);
+
+  return (
+    <div>
+      <canvas ref={chartRef}></canvas>
+    </div>
+  );
+};
+
+export default Graph;
