@@ -30,6 +30,9 @@ import MyPrescriptions from "./Component/MyPrescriptions";
 
 import Home from './Component/Home';
 
+
+import GenProjRepo from "./Component/GenProjectRepo";
+
 import GenPrec from "./Component/GenPrescriptionRepo"; 
 
 
@@ -46,11 +49,9 @@ function App() {
             <Routes>
                 <Route path="/" element={<Login/>}/>
 
-
                 <Route path='/adminHome' element={<AdminHome/>}/>
 
                 
-
 
 
                 <Route path="/all" element={<Allhospital/>}/>
@@ -74,6 +75,12 @@ function App() {
 
                 <Route path="/allProjects" element={<AllProject/>}/>
                 <Route path="/addProjects" element={<AddProject/>}/>
+
+                <Route path="/GenProjectRepo" element={<GenProjRepo/>}/>
+                
+                
+
+
                 <Route path="/UpdateProject/:id" element={<EditProject/>}/>
                 
                 <Route path="/allDonations" element={<AllDonations/>}/>

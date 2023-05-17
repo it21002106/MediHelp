@@ -81,7 +81,11 @@ export default function Home() {
 
 
                     <div className="container"><br></br>
+
                         <h1 className='text-center' style={{ padding: '300px', fontSize: '50px',fontFamily: 'fantasy'}}>Welcome To MediHelp</h1>
+
+                        <h1 className='text-center' style={{ padding: '300px', fontSize: '50px',fontFamily: 'fantasy'}}>Welcome To MediCare</h1>
+
 
                     </div>
 
