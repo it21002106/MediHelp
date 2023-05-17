@@ -24,6 +24,8 @@ import AddPrescription from "./Component/AddPrescription";
 import EditPrescription from "./Component/EditPrescription";
 import Home from './Component/Home';
 
+import GenProjRepo from "./Component/GenProjectRepo";
+
 
 
 
@@ -56,7 +58,7 @@ function App() {
 
                 <Route path="/allProjects" element={<AllProject/>}/>
                 <Route path="/addProjects" element={<AddProject/>}/>
-                
+                <Route path="/GenProjectRepo" element={<GenProjRepo/>}/>
                 
                 
                 <Route path="/UpdateProject/:id" element={<EditProject/>}/>
