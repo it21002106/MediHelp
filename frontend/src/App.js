@@ -23,6 +23,11 @@ import AllPrescriptions from "./Component/AllPrescriptions";
 import AddPrescription from "./Component/AddPrescription";
 import EditPrescription from "./Component/EditPrescription";
 
+import AllPrescriptions from "./Component/AllPrescriptions";
+import AddPrescription from "./Component/AddPrescription";
+import EditPrescription from "./Component/EditPrescription";
+import MyPrescriptions from "./Component/MyPrescriptions";
+
 import Home from './Component/Home';
 
 import GenPrec from "./Component/GenPrescriptionRepo"; 
@@ -58,6 +63,10 @@ function App() {
                 <Route path="/addPrescriptions" element={<AddPrescription/>}/>
                 <Route path="/UpdatePrescription/:id" element={<EditPrescription/>}/>
                 <Route path="/PresRport" element={<GenPrec/>}/>
+
+                <Route path="/addPrescriptions" element={<AddPrescription/>}/>
+                <Route path="/UpdatePrescription/:id" element={<EditPrescription/>}/>
+                <Route path="/myPrescriptions" element={<MyPrescriptions/>}/>
 
 
                 <Route path="/signUp" element={<Signup/>}/>
