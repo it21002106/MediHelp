@@ -17,6 +17,7 @@ import EditProject from "./Component/EditProjects";
 import Login from "./Component/login";
 import Signup from "./Component/signUp";
 import AllDonations from "./Component/AllDonations";
+import Genevent from "./Component/GeneventRepo";
 
 
 
@@ -40,6 +41,7 @@ function App() {
                 <Route path="/UpdateProject/:id" element={<EditProject/>}/>
                 <Route path="/signUp" element={<Signup/>}/>
                 <Route path="/allDonations" element={<AllDonations/>}/>
+                <Route path="/eventRport" element={<Genevent/>}/>
             </Routes>
         </Router>
     );

@@ -105,9 +105,9 @@ export default function AllEvents() {
                         Event</a></button>
 
 
-                    {/*<button className="btn btn-success"><a href="/SupReport"*/}
-                    {/*                                       style={{textDecoration: 'none', color: 'white'}}>Genarate*/}
-                    {/*    Report</a></button>*/}
+                    <button className="btn btn-success"><a href="/eventRport"
+                                                          style={{textDecoration: 'none', color: 'white'}}>Genarate
+                        Report</a></button>
                     <br></br>
 
 
