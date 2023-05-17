@@ -2,6 +2,8 @@ import React from 'react';
 import './style.css';
 import HomeButton from './Home';
 import './Homebtn.css';
+import SignOut from './SignOut';
+import './SignOut.css';
 
 function AdminDashbroad() {
   return (
@@ -14,8 +16,13 @@ function AdminDashbroad() {
           <div className="logo_name">
             MediHelp
           </div>
+          
           </span>
           
+          <div className='signOut'>
+          <SignOut></SignOut>
+          </div>
+
           <i className='bx bx-menu' id="btn"></i>
         </div>
         
@@ -63,7 +70,12 @@ function AdminDashbroad() {
 
           </li>
         </ul>
+
+        
+        
       </div>
+
+      
 
 
     </>

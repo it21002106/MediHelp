@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from "react";
 import AdminDashbroad from "./AdminDashbroad";
 import Graph from "./Graph";
+import Slides from "./Slides";
+import AllProject from "./allProject";
 
 export default function AdminHome () {
 
@@ -46,11 +48,15 @@ export default function AdminHome () {
                         />
 
                         <span className="input-group-text border-0" id="search-addon">
-               <i className="fas fa-search"></i>
-             </span>
+                            <i className="fas fa-search"></i>
+                        </span>
                     </div>
-
+                    <br/>
+                    <Slides></Slides>
                 </div>
+                <br/>
+                <h2>Details</h2>
+                
             </div>
         </div>
 

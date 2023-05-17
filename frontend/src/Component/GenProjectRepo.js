@@ -48,7 +48,7 @@ export default function GenProjRepo({search,setSearch}){
     <div className="newstaff">
     <div className="marginaling">
       <br/>
-    <button link to = "/allProjects" className="GoBack">Go back</button>
+    <Link to = "/allProjects" className="GoBack">Go back</Link>
     <button className="DownPDF" onClick={handlePrint}>Download PDF</button>
     </div>
     <div className="scroll-bgn"/>
