@@ -2,8 +2,7 @@ import React, {useState, useEffect} from "react";
 import axios from "axios";
 import {useNavigate} from "react-router-dom";
 import Swal from "sweetalert2";
-import {addHospital, deleteHospitalByID, getAllHospitals} from "../services/hospitalService";
-import AdminDashbroad from "./AdminDashbroad";
+
 import {deletePrescriptionByID} from "../services/prescriptionService";
 import Navbar from "./NavBar";
 
