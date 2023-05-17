@@ -9,6 +9,8 @@ import EditHospital from "./Component/Edit";
 import GenRepo from "./Component/GenHospitalRepo";
 import Addhospital from "./Component/Addhospital";
 
+import Home from "./Component/Home";
+
 
 
 
@@ -24,6 +26,8 @@ function App() {
                 <Route path="/Update/:id" element={<EditHospital/>}/>
                 <Route path="/SupReport" element={<GenRepo/>}/>
                 <Route path="/add" element={<Addhospital/>}/>
+
+                <Route path="/home" element={<Home/>}/>
 
               
                

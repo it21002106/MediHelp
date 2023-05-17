@@ -9,6 +9,7 @@ import GenRepo from "./Component/GenHospitalRepo";
 import Addhospital from "./Component/Addhospital";
 import AllProject from "./Component/allProject";
 import AddProject from "./Component/AddProject";
+import AdminHome from './Component/AdminHome';
 
 
 import EditProject from "./Component/EditProjects";
@@ -21,7 +22,11 @@ import Signup from "./Component/signUp";
 import AllPrescriptions from "./Component/AllPrescriptions";
 import AddPrescription from "./Component/AddPrescription";
 import EditPrescription from "./Component/EditPrescription";
+
+import Home from './Component/Home';
+
 import GenPrec from "./Component/GenPrescriptionRepo"; 
+
 
 
 
@@ -35,6 +40,13 @@ function App() {
         <Router>
             <Routes>
                 <Route path="/" element={<Login/>}/>
+
+
+                <Route path='/adminHome' element={<AdminHome/>}/>
+
+                
+
+
 
                 <Route path="/all" element={<Allhospital/>}/>
                 <Route path="/Update/:id" element={<EditHospital/>}/>
