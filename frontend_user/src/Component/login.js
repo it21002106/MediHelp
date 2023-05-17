@@ -72,7 +72,7 @@ export default function Login() {
 
 
                 <div className="container"><br></br>
-                    <h1 style={{color:"black"}} className='text-center'>Welcome To MediCare </h1>
+                    <h1 style={{color:"black"}} className='text-center'>Welcome To MediHelp </h1>
 
                     <form className="row g-2" onSubmit={login}>
 
