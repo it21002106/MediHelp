@@ -19,6 +19,10 @@ import {addDonation, addHospital} from "../services/hospitalService";
 import AdminDashbroad from "./AdminDashbroad";
 import Swal from "sweetalert2";
 import Navbar from "./NavBar";
+import ControlledCarousel from "./HomeSlide";
+import "./slider.css"
+import Footer from "./Footer";
+import './glass.css';
 
 
 
@@ -70,30 +74,33 @@ export default function Home() {
 
 
     return (
+        
 
         <div >
 
             <Navbar></Navbar>
-
 
             <div className='background'>
                 <div className="maincontainer">
 
 
                     <div className="container"><br></br>
-
-                        <h1 className='text-center' style={{ padding: '300px', fontSize: '50px',fontFamily: 'fantasy'}}>Welcome To MediHelp</h1>
-
-                        <h1 className='text-center' style={{ padding: '300px', fontSize: '50px',fontFamily: 'fantasy'}}>Welcome To MediCare</h1>
-
-
+                    <h1 className='text-center' style={{ padding: '100px', fontSize: '50px', fontFamily: 'fantasy' }}>Welcome To MediHelp</h1>
                     </div>
-
-
+                    <form>
+                    <div className="slider" id="glassmorphism">
+                        <ControlledCarousel/>    
+                    </div> 
+                    </form> 
+                    <br/>                      
+                    <br/>
+                    
+                    
                 </div>
 
             </div>
 
+            <Footer></Footer>
 
         </div>
 

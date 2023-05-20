@@ -47,7 +47,7 @@ export default function Login() {
             });
 
             localStorage.setItem('email', JSON.stringify(email));
-            navigate('/allEvents');
+            navigate('/adminHome');
         } catch (error) {
             console.error(error);
             Swal.fire({
