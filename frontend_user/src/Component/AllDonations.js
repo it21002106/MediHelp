@@ -2,9 +2,11 @@ import React, {useState, useEffect} from "react";
 import axios from "axios";
 import {useNavigate} from "react-router-dom";
 import Swal from "sweetalert2";
-
+import {addHospital, deleteHospitalByID, getAllHospitals} from "../services/hospitalService";
+import AdminDashbroad from "./AdminDashbroad";
 import {deletePrescriptionByID} from "../services/prescriptionService";
 import Navbar from "./NavBar";
+import Footer from "./Footer";
 
 
 export default function AllDonations() {
@@ -120,7 +122,7 @@ export default function AllDonations() {
                         <thead>
                         <tr>
                             {/*<th scope="col">ID</th>*/}
-                            <th scope="col">Event Id</th>
+                            <th scope="col">Donation Id</th>
                             <th scope="col">Donation Name</th>
                             <th scope="col">Mobile Number</th>
                             <th scope="col">Email</th>
@@ -156,8 +158,7 @@ export default function AllDonations() {
                     </table>
                 </div>
             </div>
-
-
+            
         </div>
 
     )
