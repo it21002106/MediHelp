@@ -145,13 +145,13 @@ export default function AllProject() {
                             ))
                             :
                             project.map((project, id) => (
-                                <Grid item xs={12} md={4}>
+                                <Grid item xs={120} md={40}>
 
                                     <Card sx={{ display: 'flex' }}>
                                         <Box sx={{ display: 'flex', flexDirection: 'column' }}>
                                             <CardContent sx={{ flex: '1 0 auto' }}>
                                                 <Typography component="div" variant="h5">
-                                                    {project.projectName} - {project.projectOrganisation}                                                </Typography>
+                                                    {project.projectName} - {project.projectOrganisation} <br/> <h6> {project.projectDescription}  </h6>                                              </Typography>
                                                 <Typography variant="subtitle1" color="text.secondary" component="div">
                                                     {project.projectStartDate} -
                                                     {project.projectEndDate}

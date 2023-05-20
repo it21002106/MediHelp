@@ -64,7 +64,7 @@ export default function AddDoanation() {
                 timer: 1500
             })
 
-            navigate("/allEvents");
+            navigate("/allProjects");
 
     }
 
@@ -92,7 +92,7 @@ export default function AddDoanation() {
                                         <div className="col-auto">
 
                                             <MDBCol md='6'>
-                                                <label>Donation Name</label>
+                                                <label>Donor Name</label>
                                                 <input type="text" className="form-control" id="hospitalName"
                                                        placeholder="Enter donation name"
 
@@ -139,7 +139,7 @@ export default function AddDoanation() {
                                             <MDBCol md='6'>
                                                 <label htmlFor="fax">Amount</label>
                                                 <input type="number" className="form-control" id="fax"
-                                                       aria-describedby="emailHelp" placeholder="Enter fax"
+                                                       aria-describedby="emailHelp" placeholder="Enter amount"
 
                                                        onChange={(e) => {
 
