@@ -9,7 +9,7 @@ Member 4 - IT21005558 - Bandara E.A.G.S.V
 
 --------------------------------------------------------------
 
-SDG – GOOD HEALTH AND WELL – BEIN 
+SDG – GOOD HEALTH AND WELL BEING 
 
 Problem –  Because of the undergoing current crisis of Sri Lanka many product that used to be imported to the country have ceased. One of the main
 industries affected has been the “Health Sector.” Essential medicines and medical equipment are no longer being imported into the country.
